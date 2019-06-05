@@ -1,24 +1,8 @@
 import re
 
-def getSentences(doc):
-    """
-    Args:
-        doc: str
-    Returns:
-        list[str]: list of sentences
-    """
-    # 分段
-    paragrahps = doc.split('\n')
-    # 分句
-    sentences = []
-    for para in paragrahps:
-        sentences += cut_sent(para)
-
-    return sentences
-
 
 # 参考:https://blog.csdn.net/blmoistawinde/article/details/82379256
-def cut_sent(para):
+def chinese_cut_sent(para):
     para = re.sub('([。！？\?])([^”’])', r"\1\n\2", para)  # 单字符断句符
     para = re.sub('(\.{6})([^”’])', r"\1\n\2", para)  # 英文省略号
     para = re.sub('(\…{2})([^”’])', r"\1\n\2", para)  # 中文省略号
