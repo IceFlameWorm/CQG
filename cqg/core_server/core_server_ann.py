@@ -1,4 +1,4 @@
-from .base_ann import BaseAnn
+from ..base.base_ann import BaseAnn
 from .core_server_sen import CoreServerSen
 
 

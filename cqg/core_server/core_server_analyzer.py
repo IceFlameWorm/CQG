@@ -1,5 +1,5 @@
 import requests
-from .base_analyzer import BaseAnalyzer
+from ..base.base_analyzer import BaseAnalyzer
 
 class CoreServerAnalyzer(BaseAnalyzer):
     def __init__(self, url = "http://localhost:9000",

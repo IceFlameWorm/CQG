@@ -22,7 +22,7 @@ class BaseAnn(object):
 
     @property
     def ares(self):
-        self._ares
+        return self._ares
 
     @ares.setter
     def ares(self, ares):

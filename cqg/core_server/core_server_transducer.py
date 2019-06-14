@@ -1,5 +1,5 @@
-from .base_transducer import BaseTransducer
-from ..ann.core_server_quest import CoreServerQuest
+from ..base.base_transducer import BaseTransducer
+from .core_server_quest import CoreServerQuest
 
 
 class CoreServerTransducer(BaseTransducer):

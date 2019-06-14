@@ -3,6 +3,9 @@ from .core_server_analyzer import CoreServerAnalyzer
 from .core_server_ann import CoreServerAnn
 from .core_server_sen import CoreServerSen
 
+import re
+import requests
+
 
 class CoreServerTransformer(BaseTransformer):
     def __init__(self, max_len = None, by_punc = True, rule = None,
@@ -61,7 +64,7 @@ class CoreServerTransformer(BaseTransformer):
                     tmp_ann = CoreServerAnn(sub_text)
                     tmp_ann = self.analyzer(tmp_ann)
                     tmp_sens = tmp_ann.ares["sentences"]
-                    simplified_sens += [CoreServerSen(tmp_ann, sen) for tmp_sen in tmp_sens]
+                    simplified_sens += [CoreServerSen(tmp_sen, sen) for tmp_sen in tmp_sens]
         return simplified_sens
 
     def _treestr2text(self, treestr):
